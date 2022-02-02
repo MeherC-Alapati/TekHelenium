@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing ">
+	<test name="Regression" preserve-order="true">
+		<classes>
+			<class name="com.tek.tests.ConstructionJobSearchTest">
+				<methods>
+					<include name="validateConstructionJobPage" />
+					<include name="SearchConstructionJob" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.DistributionJobSearchTest">
+				<methods>
+					<include name="validateDistributionJobPage" />
+					<include name="SearchDistributionJob" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.FacilitiesJobTest">
+				<methods>
+					<include name="validateFacilitiesJobPage" />
+					<include name="SearchFacilitiesJob" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.GlobalJobSearchTest">
+				<methods>
+					<include name="SearchJobs" />
+					<include name="VerifyJobCount" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.ManufacturingJobTest">
+				<methods>
+					<include name="ValidateManufacturingJobPage" />
+					<include name="SearchManufacturingJob" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.PDFValiadtionTest">
+				<methods>
+					<include name="ValidatePDFContent" />
+				</methods>
+			</class>
+			<class name="com.tek.tests.ImageToTextValidationTest">
+				<methods>
+					<include name="validateImgetext" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

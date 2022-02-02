@@ -40,7 +40,8 @@
 			</class>
 			<class name="com.tek.tests.ImageToTextValidationTest">
 				<methods>
-					<include name="validateImgetext" />
+					<include name="validateClearImgetext" />
+					<include name="validateNoicyImgetext" />
 				</methods>
 			</class>
 		</classes>

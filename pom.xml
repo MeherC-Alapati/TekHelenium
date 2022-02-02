@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>net.sourceforge.tess4j</groupId>
 			<artifactId>tess4j</artifactId>
-			<version>3.4.3</version>
+			<version>5.1.0</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -11,23 +11,30 @@ import net.sourceforge.tess4j.TesseractException;
 public class ImageToTextValidationTest {
 
 	@Test()
-	public void validateImgetext() {
-
-		String filepath = System.getProperty("user.dir") + "\\src\\test\\resources\\documents\\TekLogo.PNG";
-
+	public void validateClearImgetext() {
+		String filepath = System.getProperty("user.dir") + "\\src\\test\\resources\\documents\\TekLogo.PNG";	
 		try {
 			String text = getTextFromImage(filepath);
 			System.out.println(text);
 		} catch (TesseractException e) {
 			System.out.println("Exception" + e.getMessage());
 		}
+	}
 
+	@Test()
+	public void validateNoicyImgetext() {
+		String filepath = System.getProperty("user.dir") + "\\src\\test\\resources\\documents\\NoiceImage.PNG";
+		try {
+			String text = getTextFromImage(filepath);
+			System.out.println(text);
+		} catch (TesseractException e) {
+			System.out.println("Exception" + e.getMessage());
+		}
 	}
 
 	public String getTextFromImage(String filepath) throws TesseractException {
-		ITesseract tess = new Tesseract();
+		ITesseract tess = new Tesseract();		
+		tess.setDatapath(System.getProperty("user.dir") +"\\tessdata");
 		return tess.doOCR(new File(filepath));
-
 	}
-
 }

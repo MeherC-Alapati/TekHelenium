@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Testing_">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Testing_" title="com.tek.tests.ImageToTextValidationTest" class="method navigator-link" hash-for-method="validateImgetext">validateImgetext</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Testing_" title="com.tek.tests.ImageToTextValidationTest" class="method navigator-link" hash-for-method="validateClearImgetext">validateClearImgetext</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Testing_" title="com.tek.tests.ImageToTextValidationTest" class="method navigator-link" hash-for-method="validateNoicyImgetext">validateNoicyImgetext</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Testing_ -->
@@ -127,9 +132,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validateImgetext">
-                  </a> <!-- validateImgetext -->
-                  <span class="method-name">validateImgetext</span>
+                  <a name="validateClearImgetext">
+                  </a> <!-- validateClearImgetext -->
+                  <span class="method-name">validateClearImgetext</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateNoicyImgetext">
+                  </a> <!-- validateNoicyImgetext -->
+                  <span class="method-name">validateNoicyImgetext</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,7 +195,8 @@
       &lt;/class&gt; &lt;!-- com.tek.tests.PDFValiadtionTest --&gt;
       &lt;class name=&quot;com.tek.tests.ImageToTextValidationTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;validateImgetext&quot;/&gt;
+          &lt;include name=&quot;validateClearImgetext&quot;/&gt;
+          &lt;include name=&quot;validateNoicyImgetext&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.tek.tests.ImageToTextValidationTest --&gt;
     &lt;/classes&gt;
@@ -225,16 +238,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validateImgetext')
+data.setCell(0, 1, 'validateClearImgetext')
 data.setCell(0, 2, 'com.tek.tests.ImageToTextValidationTest')
-data.setCell(0, 3, 656);
+data.setCell(0, 3, 584);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateNoicyImgetext')
+data.setCell(1, 2, 'com.tek.tests.ImageToTextValidationTest')
+data.setCell(1, 3, 196);
 window.suiteTableData['Testing_']= { tableData: data, tableDiv: 'times-div-Testing_'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 656 ms</span>
+              <span class="suite-total-time">Total running time: 780 ms</span>
               <div id="times-div-Testing_">
               </div> <!-- times-div-Testing_ -->
             </div> <!-- times-div -->
@@ -253,27 +270,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.tek.tests.PDFValiadtionTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidatePDFContent</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
               <span class="ignored-class-name">com.tek.tests.ConstructionJobSearchTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">validateConstructionJobPage</span>
                 <br/>
                 <span class="ignored-method-name">SearchConstructionJob</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.tek.tests.FacilitiesJobTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">validateFacilitiesJobPage</span>
-                <br/>
-                <span class="ignored-method-name">SearchFacilitiesJob</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -296,6 +297,22 @@ return data;
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
+              <span class="ignored-class-name">com.tek.tests.PDFValiadtionTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ValidatePDFContent</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.tek.tests.FacilitiesJobTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">validateFacilitiesJobPage</span>
+                <br/>
+                <span class="ignored-method-name">SearchFacilitiesJob</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
               <span class="ignored-class-name">com.tek.tests.ManufacturingJobTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">SearchManufacturingJob</span>
@@ -314,8 +331,12 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.tests.ImageToTextValidationTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">validateImgetext</span>
+                <span class="method-name">validateClearImgetext</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateNoicyImgetext</span>
+                <span class="method-start">587 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

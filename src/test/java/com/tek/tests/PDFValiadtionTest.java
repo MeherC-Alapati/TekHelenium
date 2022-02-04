@@ -17,14 +17,19 @@ import org.testng.Assert;
 
 public class PDFValiadtionTest extends Page {
 	public WebDriver driver;
+	public final String pdfpath = "http://www.pdf995.com/samples/pdf.pdf";
 
-	@Test
-	public void ValidatePDFContent() {
+	@BeforeMethod
+	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
 		driver = new ChromeDriver();
-		String pdfpath = "http://www.pdf995.com/samples/pdf.pdf";
+
 		driver.get(pdfpath);
+	}
+
+	@Test
+	public void validatePDFContent() {
 		try {
 			String pdfContent = readPdfContent(pdfpath);
 			Assert.assertTrue(pdfContent.contains("The Pdf995 Suite offers the following features"),
@@ -36,15 +41,55 @@ public class PDFValiadtionTest extends Page {
 		}
 	}
 
-	// get the pdf content from the pdf document
+	@Test
+	public void validatePDFTotalPageNumbers() throws IOException {
+		String pdfpath = "http://www.pdf995.com/samples/pdf.pdf";
+		driver.get(pdfpath);
+		URL pdfUrl = new URL(pdfpath);
+		InputStream in = pdfUrl.openStream();
+		BufferedInputStream bf = new BufferedInputStream(in);
+		PDDocument doc = PDDocument.load(bf);
+		int pagenumbers = getPageCount(doc);
+		System.out.println("Tot number of pages in the document " + pagenumbers);
+	}
+
+	@Test
+	public void validateKeywordSearchPage() {
+		try {
+			getTextFromPage(pdfpath, "Virtual Reality Modeling Language");
+
+		} catch (MalformedURLException e) {
+
+		} catch (IOException e) {
+
+		}
+	}
+
+	public void getTextFromPage(String url, String keyword) throws IOException {
+		URL pdfUrl = new URL(url);
+		InputStream in = pdfUrl.openStream();
+		BufferedInputStream bf = new BufferedInputStream(in);
+		PDDocument doc = PDDocument.load(bf);
+		for (int pageNumber = 1; pageNumber < doc.getNumberOfPages(); pageNumber++) {
+
+			PDFTextStripper s = new PDFTextStripper();
+			s.setStartPage(pageNumber);
+			s.setEndPage(pageNumber);
+			String contents = s.getText(doc);
+
+			if (contents.contains(keyword)) {
+				System.out.println("Keyword '" + keyword + "' is found in Page " + pageNumber);
+			}
+		}
+		doc.close();
+	}
+
 	public static String readPdfContent(String url) throws IOException {
 
 		URL pdfUrl = new URL(url);
 		InputStream in = pdfUrl.openStream();
 		BufferedInputStream bf = new BufferedInputStream(in);
 		PDDocument doc = PDDocument.load(bf);
-		int numberOfPages = getPageCount(doc);
-		System.out.println("The total number of pages " + numberOfPages);
 		String content = new PDFTextStripper().getText(doc);
 		doc.close();
 
@@ -57,7 +102,7 @@ public class PDFValiadtionTest extends Page {
 		return pageCount;
 	}
 
-	@AfterClass
+	@AfterMethod
 	public void afterClass() {
 		driver.quit();
 	}

@@ -35,7 +35,9 @@
 			</class>
 			<class name="com.tek.tests.PDFValiadtionTest">
 				<methods>
-					<include name="ValidatePDFContent" />
+					<include name="validatePDFContent" />
+					<include name="validatePDFTotalPageNumbers" />
+					<include name="validateKeywordSearchPage" />
 				</methods>
 			</class>
 			<class name="com.tek.tests.ImageToTextValidationTest">

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing ">
+	<test name="Regression" preserve-order="true">
+		<classes>
+			<class name="com.tek.tests.CheckoutTest">
+				<methods>
+					<include name="validateCheckoutPageForVersionOne" />
+					<include name="validateCheckoutPageForVersionTwo" />
+				</methods>
+			</class>
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.tek.base.Constants;
 import com.tek.base.Page;
@@ -36,6 +37,11 @@ public class Utilities extends Page {
 	public static void scrollintoview(WebDriver driver, WebElement element) throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(500);
+	}
+	public static void selectDropDownByIndex(WebElement element,int index)
+	{
+		Select options=new Select(element);
+		options.selectByIndex(index);
 	}
 
 }
